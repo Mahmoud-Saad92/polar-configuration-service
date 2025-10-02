@@ -6,7 +6,7 @@ A dedicated service for configuration management
 After building the application, you can also run it from the Java CLI:
 
 ```bash
-$ java -jar target/catalog-service-0.0.1.jar
+$ java -jar target/configuration-service-0.0.1.jar
 ```
 
 Run to build docker container locally
