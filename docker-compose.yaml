@@ -11,3 +11,12 @@ services:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     environment:
       SERVER_PORT: ${CONTAINER_PORT}
+    networks:
+      polar-nw:
+        aliases:
+          - 'configuration-service'
+
+networks:
+  polar-nw:
+    name: polar-nw
+    external: true
