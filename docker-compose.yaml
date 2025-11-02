@@ -11,6 +11,7 @@ services:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     environment:
       SERVER_PORT: ${CONTAINER_PORT}
+      GIT_URI: ${GIT_URI}
     networks:
       polar-nw:
         aliases:

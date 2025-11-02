@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configuration-service
+  labels:
+    app: configuration-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: configuration-service
+  template:
+    metadata:
+      labels:
+        app: configuration-service
+    spec:
+      containers:
+        - name: configuration-service
+          image: configuration-service:0.0.1
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 5"]
+          ports:
+            - containerPort: 8888
+          env:
+            - name: HOST_PORT
+              value: '8888'
+            - name: CONTAINER_PORT
+              value: '8888'
+            - name: GIT_URI
+              value: 'https://github.com/Mahmoud-Saad92/polar-configuration-repo'
