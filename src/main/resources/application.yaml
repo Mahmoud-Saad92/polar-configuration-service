@@ -1,3 +1,7 @@
+application:
+  version: @project.version@
+  title: BZA[configuration-service]
+
 server:
   port: 8888
   shutdown: graceful
